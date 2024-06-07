@@ -44,7 +44,7 @@ if (isset($_POST['filename']) && isset($_POST['mimetype']) && isset($_POST['data
 } else {
 	// Se a requisicao foi feita incorretamente, ou seja, os parametros 
 	// nao foram enviados corretamente para o servidor, o cliente 
-	// recebe a chave "sucesso" com valor 0. A chave "erro" indica o 
+	// recebe a chave "sucesso" com valor 0. A chave "erro" indica o 00000
 	// motivo da falha.
 	$resposta["sucesso"] = 0;
 	$resposta["erro"] = "Campo requerido nao preenchido";
