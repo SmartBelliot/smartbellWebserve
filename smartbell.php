@@ -11,6 +11,8 @@
 // array de resposta
 $resposta = array();
 
+$out = "";
+
 	
 // Primeiro, verifica-se se todos os parametros foram enviados pelo cliente.
 // A criacao de um produto precisa dos seguintes parametros:
@@ -48,6 +50,7 @@ if (isset($_POST['filename']) && isset($_POST['mimetype']) && isset($_POST['data
 	// motivo da falha.
 	$resposta["sucesso"] = 0;
 	$resposta["erro"] = "Campo requerido nao preenchido";
+	$out = json_encode($resposta);
 }
 
 
