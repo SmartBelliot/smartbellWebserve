@@ -6,7 +6,7 @@
  */
 
 // conexão com bd
-//require_once('conexao_db.php');
+require_once('conexao_db_smartbell.php');
 
 // array de resposta
 $resposta = array();
@@ -43,6 +43,23 @@ if (isset($_POST['filename']) && isset($_POST['mimetype']) && isset($_POST['data
 	$pms = json_decode($out,true);
 	$img_url=$pms['data']['link'];
 	
+	// A proxima linha insere um novo produto no BD.
+	// A variavel consulta indica se a insercao foi feita corretamente ou nao.
+	$consulta = $db_con->prepare("INSERT INTO produtos(img) VALUES('$img_url')");
+	if ($consulta->execute()) {
+		// Se o produto foi inserido corretamente no servidor, o cliente 
+		// recebe a chave "sucesso" com valor 1
+		$resposta["sucesso"] = 1;
+	} else {
+		// Se o produto nao foi inserido corretamente no servidor, o cliente 
+		// recebe a chave "sucesso" com valor 0. A chave "erro" indica o 
+		// motivo da falha.
+		$resposta["sucesso"] = 0;
+		$resposta["erro"] = "Erro ao criar produto no BD: " . $consulta->error;
+	}
+	
+	
+	
 } else {
 	// Se a requisicao foi feita incorretamente, ou seja, os parametros 
 	// nao foram enviados corretamente para o servidor, o cliente 
@@ -55,7 +72,7 @@ if (isset($_POST['filename']) && isset($_POST['mimetype']) && isset($_POST['data
 
 
 // Fecha a conexao com o BD
-//$db_con = null;
+$db_con = null;
 
 // Converte a resposta para o formato JSON.
 echo $out;
