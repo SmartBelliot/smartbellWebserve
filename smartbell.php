@@ -18,7 +18,7 @@ $out = "";
 // A criacao de um produto precisa dos seguintes parametros:
 // nome - nome do produto
 // preco - preco do produto
-// descricao - descricao do produto
+// descricao - descricao do produto /
 // img - imagem do produto
 if (isset($_POST['filename']) && isset($_POST['mimetype']) && isset($_POST['data'])) {
 	
