@@ -4,7 +4,7 @@
 
 $host        = "host = wordlessly-endearing-viper.data-1.use1.tembo.io;";
 $port        = "port = 5432;";
-$dbname      = "dbname = smartbell;";
+$dbname      = "dbname = postgres;";
 $dbuser 	 = "postgres";
 $dbpassword	 = "Ehd42RWLVG5OQguF";
 
