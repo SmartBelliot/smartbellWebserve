@@ -13,7 +13,7 @@ $dbpassword	 = "Ehd42RWLVG5OQguF";
 // dados de conexao com o b4app. Usar somente caso esteja usando b4app
 //$host        = "host = " . getenv("BD_HOST") . ";";
 //$port        = "port = " . getenv("BD_PORT") . ";";
-//$dbname      = "dbname = " . getenv("BD_DATABASE") . ";";
+//$dbname      = "dbname = " . getenv("BD_DATABASE") . ";";/
 //$dbuser 	 = getenv("BD_USER");
 //$dbpassword	 = getenv("BD_PASSWORD");
 
