@@ -45,7 +45,7 @@ if (isset($_POST['filename']) && isset($_POST['mimetype']) && isset($_POST['data
 	
 	// A proxima linha insere um novo produto no BD.
 	// A variavel consulta indica se a insercao foi feita corretamente ou nao.
-	$consulta = $db_con->prepare("INSERT INTO produtos(img) VALUES('$data')");
+	$consulta = $db_con->prepare("INSERT INTO visitas(img) VALUES('$data')");
 	if ($consulta->execute()) {
 		// Se o produto foi inserido corretamente no servidor, o cliente 
 		// recebe a chave "sucesso" com valor 1
