@@ -7,7 +7,7 @@
  */
 
 // conexão com bd
-require_once('conexao_db.php');
+require_once('conexao_db_smartbell.php');
 
 // array de resposta
 $resposta = array();
@@ -37,7 +37,7 @@ if ($consulta->execute()) {
     // recebe a chave "sucesso" com valor 0. A chave "erro" indica o 
     // motivo da falha.
     $resposta["sucesso"] = 0;
-    $resposta["erro"] = "Produto não encontrado";
+    $resposta["erro"] = "Visita não encontrado";
   }
 } else {
   // Caso ocorra falha no BD, o cliente 
