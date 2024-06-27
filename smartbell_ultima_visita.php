@@ -13,7 +13,7 @@ require_once('conexao_db_smartbell.php');
 $resposta = array();
 
 // Obtem do BD os detalhes do produto com id especificado na requisicao GET
-$consulta = $db_con->prepare("SELECT * FROM visitas WHERE id = (SELECT MAX($id) FROM visitas)");
+$consulta = $db_con->prepare("SELECT * FROM visitas WHERE id = (SELECT MAX(id) FROM visitas)");
 
 if ($consulta->execute()) {
   if ($consulta->rowCount() > 0) {
