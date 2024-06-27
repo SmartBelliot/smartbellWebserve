@@ -25,7 +25,7 @@ if (isset($_GET['limit']) && isset($_GET['offset'])) {
 	$offset = $_GET['offset'];
 
 	// Realiza uma consulta ao BD e obtem todos os produtos.
-	$consulta = $db_con->prepare("SELECT * FROM visitas LIMIT " . $limit . " OFFSET " . $offset);
+	$consulta = $db_con->prepare("SELECT * FROM visitas LIMIT " . $limit . " OFFSET " . $offset . "ORDER BY data_criacao DESC");
 	if($consulta->execute()) {
 		// Caso existam produtos no BD, eles sao armazenados na 
 		// chave "produtos". O valor dessa chave e formado por um 
